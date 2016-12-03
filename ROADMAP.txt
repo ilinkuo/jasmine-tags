@@ -1,0 +1,15 @@
+ROADMAP
+
+
+- functionality holes
+	* getConfig
+- Documentation
+	* Add example of parametrized test
+- Stats
+	* tagged vs non-tagged tests
+	* tag frequencies (counts vs weighted)
+	* key frequencies and key type frequencies
+- step, pre, post?
+- dynamic re-configuration? to allow changing templates
+- describe stack?
+

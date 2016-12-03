@@ -1,0 +1,27 @@
+{
+  "name": "jasmine-tags",
+  "version": "1.0.0",
+  "description": "Extend jasmine/protractor with tag \u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dwith tags",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node --color spec  --config tags.any yum --config tags.action ui"
+  },
+  "keywords": [
+    "jasmine",
+    "protractor",
+    "tags",
+    "extension"
+  ],
+  "author": "I-Lin Kuo <ikuoikuo@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "2.5.2",
+    "jasmine-node": "1.14.5"
+  },
+  "dependencies": {
+    "chalk": "1.1.3",
+    "express": "4.14.0",
+    "request": "2.79.0",
+    "underscore": "1.8.3"
+  }
+}
