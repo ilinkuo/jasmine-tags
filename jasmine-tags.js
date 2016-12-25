@@ -4,7 +4,7 @@ if (typeof process == "undefined") {
 }
 
 const chalk = require("chalk");
-const _ = require("underscore");
+const _ = require("lodash");
 const NOOP_IT = {
 	pend: () => undefined
 };
@@ -134,7 +134,10 @@ function wrapAll(){
 		} 
 	}
 	describe.help = function(){
-		console.log(WRAP_OPTIONS_DESCRIPTIONS);
+		console.log("HELP -- OPTIONS");
+		Object.keys(WRAP_OPTIONS_DESCRIPTIONS).forEach(
+		    (key) => console.log("  " + _.padEnd(key, 22) + WRAP_OPTIONS_DESCRIPTIONS[key])
+		);
 	}
 };
 
@@ -150,12 +153,12 @@ function applyItTemplate(obj){
 function hasAnyTags(itTags){
 	if (!WRAP_OPTIONS.tagsAny) return true;
 	if (!itTags) return WRAP_STATE.hasDescribeTags; // return precomputed result based on describe tags only
-	return WRAP_STATE.hasDescribeTags || WRAP_OPTIONS.tagsAny.some(tag => _.contains(itTags, tag));
+	return WRAP_STATE.hasDescribeTags || WRAP_OPTIONS.tagsAny.some(tag => _.includes(itTags, tag));
 }
 function hasAllTags(itTags, describeTags){
 	if (!WRAP_OPTIONS.tagsAll) return true;
 	if (!itTags) return WRAP_STATE.hasDescribeTags; // return precomputed result based on describe tags only
-	return WRAP_OPTIONS.tagsAll.every(tag => _.contains(itTags, tag) || _.contains(describeTags, tag));
+	return WRAP_OPTIONS.tagsAll.every(tag => _.includes(itTags, tag) || _.includes(describeTags, tag));
 }
 function hasTags(itTags, describeTags){
 	WRAP_OPTIONS.trace && console.log("  hasTags?:", itTags, describeTags)
