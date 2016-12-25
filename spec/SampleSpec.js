@@ -2,10 +2,14 @@ require("jasmine");
 require("../jasmine-tags.js");
 
 describe.config({
+	trace: true,
 	// tagsAny : ["yup", "wup"],
-	tagsAll : ["yup","Page"]//,
+	// tagsAll : ["yup","Page"]//,
+	tagsAny: ["HULK"]
 	//extractTags: (obj => ["yup","Page"].concat(obj.tags))
 });
+
+describe.help();
 
 // TODO: REMOVE, FOR TESTING
 const TEST_RESULT = false;
